@@ -1,6 +1,52 @@
 
 LeetCode
 ========
+<!-- COVERAGE_START -->
+## 📊 Coverage Summary
+
+> Last updated: 2026-02-18
+
+| Metric | Solved | Total (LeetCode) | Coverage |
+|--------|--------|-------------------|----------|
+| **All Problems** | 553 | 3846 | 14.4% |
+| **C++ Solutions** | 520 | 3846 | 13.5% |
+
+| Difficulty | Solved | Total (LeetCode) |
+|------------|--------|-------------------|
+| 🟢 Easy | 181 | 927 |
+| 🟡 Medium | 285 | 2010 |
+| 🔴 Hard | 87 | 909 |
+
+### Solved vs Unsolved
+
+```mermaid
+pie title LeetCode Progress (553 / 3846)
+    "Solved" : 553
+    "Unsolved" : 3293
+```
+
+### Difficulty Distribution (Solved)
+
+```mermaid
+pie title Solved Problems by Difficulty
+    "Easy" : 181
+    "Medium" : 285
+    "Hard" : 87
+```
+
+### Solutions by Language
+
+| Language | Solutions |
+|----------|-----------|
+| C++ | 520 |
+| Java | 46 |
+| Python | 82 |
+| Go | 1 |
+| Shell | 4 |
+| SQL | 1 |
+
+<!-- COVERAGE_END -->
+
 
 ### LeetCode Algorithm
 
