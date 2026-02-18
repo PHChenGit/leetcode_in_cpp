@@ -1,0 +1,40 @@
+name: Update README Coverage
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    types: [closed]
+    branches: [master]
+
+jobs:
+  update-readme:
+    # For PRs, only run when the PR was actually merged
+    if: github.event_name == 'push' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 2  # Need previous commit for diff
+
+      - name: Auto-detect new solutions and update README table
+        run: bash scripts/auto_readme.sh
+
+      - name: Update coverage summary
+        run: bash scripts/coverage.sh
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet README.md || {
+            git add README.md
+            git commit -m "docs: update README with new solutions and coverage [skip ci]"
+            git push
+          }
